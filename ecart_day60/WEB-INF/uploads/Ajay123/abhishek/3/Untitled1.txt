@@ -1,1 +1,0 @@
-insert into product_pics (product_pics_id,product_id,product_pic) value (2,3,"Ajay123/abhishek/4/abc.jpg");
