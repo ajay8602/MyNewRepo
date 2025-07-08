@@ -16,7 +16,15 @@ pipeline {
         }
         stage('Test') {
             steps {
-                echo 'Testing...'
+                script {
+                    // Simulate success or failure
+                    def buildSuccess = true
+                    if (buildSuccess) {
+                        githubNotify context: 'CI Status', status: 'SUCCESS', description: 'Build passed 🎉'
+                    } else {
+                        githubNotify context: 'CI Status', status: 'FAILURE', description: 'Build failed ❌'
+                    }
+                }
             }
         }
     }
